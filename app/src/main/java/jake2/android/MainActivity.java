@@ -10,10 +10,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import jake2.android.gles.Jake2GLSurfaceView;
+import jake2.fullgame.Jake2Game;
 
 public class MainActivity extends AppCompatActivity {
 
     private GLSurfaceView glView;
+
+    private Jake2Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
 //            return insets;
 //        });
 
-        this.glView = new Jake2GLSurfaceView(this);
+        this.game = new Jake2Game(this);
+
+        this.glView = new Jake2GLSurfaceView(this, this.game);
         setContentView(this.glView);
     }
 }

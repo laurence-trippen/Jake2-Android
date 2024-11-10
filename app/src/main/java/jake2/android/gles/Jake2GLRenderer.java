@@ -4,19 +4,21 @@ import static android.opengl.GLES30.*;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-import android.util.Log;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class Jake2GLRenderer implements GLSurfaceView.Renderer {
+import jake2.fullgame.Jake2Game;
 
-    private static final String TAG = Jake2GLRenderer.class.getSimpleName();
+public class Jake2GLRenderer implements GLSurfaceView.Renderer {
 
     private final Context context;
 
-    public Jake2GLRenderer(Context context) {
+    private final Jake2Game game;
+
+    public Jake2GLRenderer(Context context, Jake2Game game) {
         this.context = context;
+        this.game = game;
     }
 
     @Override
@@ -29,9 +31,7 @@ public class Jake2GLRenderer implements GLSurfaceView.Renderer {
         // glEnable(GL_BLEND);
         // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-        // Game init code here ...
-
-        // Log.i(TAG, "GAME INIT");
+        this.game.init();
     }
 
     @Override
@@ -41,8 +41,6 @@ public class Jake2GLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        // Game update code here
-
-        // Log.i(TAG, "GAME UPDATE");
+        this.game.update();
     }
 }

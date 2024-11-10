@@ -5,18 +5,20 @@ import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
 import android.view.View;
 
+import jake2.fullgame.Jake2Game;
+
 public class Jake2GLSurfaceView extends GLSurfaceView implements View.OnTouchListener {
 
     private final Jake2GLRenderer renderer;
 
-    public Jake2GLSurfaceView(Context context) {
+    public Jake2GLSurfaceView(Context context, Jake2Game game) {
         super(context);
 
         // Create an OpenGL ES 3.0 context
         setEGLContextClientVersion(3);
 
         // Set Renderer object
-        this.renderer = new Jake2GLRenderer(context);
+        this.renderer = new Jake2GLRenderer(context, game);
         this.setRenderer(this.renderer);
 
         // Set Renderer mode
