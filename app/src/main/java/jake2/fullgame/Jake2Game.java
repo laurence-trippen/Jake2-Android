@@ -5,6 +5,9 @@ import android.content.Context;
 import java.util.Arrays;
 import java.util.List;
 
+import jake2.client.CL;
+import jake2.client.Key;
+import jake2.client.SCR;
 import jake2.qcommon.Com;
 import jake2.qcommon.Defines;
 import jake2.qcommon.Globals;
