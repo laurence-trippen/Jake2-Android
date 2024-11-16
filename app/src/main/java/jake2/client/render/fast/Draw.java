@@ -61,7 +61,7 @@ public abstract class Draw extends Image {
 
 		num &= 255; // fixme: change to `char`
 	
-		if ( (num&127) == 32 ) return; // space
+		if ( (num & 127) == 32 ) return; // space
 
         if (y <= -Console.CHAR_SIZE_PX) return; // totally off screen
 
