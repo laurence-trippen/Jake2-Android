@@ -38,6 +38,7 @@ android {
 dependencies {
     // TODO LT: Add to version TOML
     implementation("org.apache.commons:commons-csv:1.9.0")
+    implementation("com.github.umjammer:jlayer:1.0.3")
 
     implementation(libs.appcompat)
     implementation(libs.material)

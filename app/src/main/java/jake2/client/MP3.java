@@ -42,9 +42,10 @@ public class MP3 {
         if (init() == -1) {
             isinitialized = false;
             iserror = true;
-        } else
+        } else {
             isinitialized = true;
             iserror = false;
+        }
     }
     
     private int init() {
